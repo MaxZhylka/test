@@ -1,12 +1,22 @@
+// card.reducer.ts
 import { createReducer, on } from '@ngrx/store';
-import { increment, decrement, reset } from '../actions/counter.action';
-import {Action} from "rxjs/internal/scheduler/Action";
+import { loadCards, loadCardsSuccess, loadCardsFailure } from '../actions/card.actions';
+import {Card} from "../../services/card.service";
 
-export const initialState = 0;
 
-export const counterReducer= createReducer(
+export interface CardState {
+  cards: Card[];
+  error: any;
+}
+
+export const initialState: CardState = {
+  cards: [],
+  error: null
+};
+
+export const cardReducer = createReducer(
   initialState,
-  on(increment, (state) => state + 1),
-  on(decrement, (state) => state - 1),
-  on(reset, (state) => 0)
+  on(loadCards, state => ({ ...state, cards: [] })),
+  on(loadCardsSuccess, (state, { cards }) => ({ ...state, cards })),
+  on(loadCardsFailure, (state, { error }) => ({ ...state, error }))
 );
