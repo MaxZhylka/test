@@ -24,6 +24,13 @@ export class HomePageComponent implements OnInit,OnDestroy {
     this.cards$ = store.pipe(select(state => state.cards.filteredCards));
   }
 
+    onContainerClick(event: MouseEvent): void {
+    // for Safari, in mobile version this browser did not drop focus
+    const clickedInside = this.input.nativeElement.contains(event.target);
+    if (!clickedInside) {
+      this.input.nativeElement.blur();
+    }
+  }
   ngOnInit() {
    this.store.dispatch(loadCards());
 

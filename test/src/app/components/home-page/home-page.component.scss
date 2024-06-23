@@ -29,9 +29,26 @@ header {
   @include  respond-to(small)
   {
     width: 89.59vw;
-    height: 11.92vw;
+    height: 13.92vw;
     gap: 1.48vw;
+  }
 
+  img{
+    padding: 0 1.38vw 0 1.38vw;
+    width: 1.38vw;
+    height: 1.38vw;
+
+      @include respond-to(large) {
+   padding: 0 2.07vw 0 2.07vw;
+    width: 2.07vw;
+    height: 2.07vw;
+  }
+  @include  respond-to(small)
+  {
+    padding: 0 2.5vw 0 2.5vw;
+    width: 3.5vw;
+    height: 3.5vw;
+  }
   }
 
   h1 {
@@ -51,10 +68,10 @@ header {
     }
     @include respond-to(small)
     {
-      font-size: 3vw;
+      font-size: 4.5vw;
       width: 89.59vw;
-      height: 3vw;
-      line-height: 3.2vw;
+      height: 4.5vw;
+      line-height: 4.7vw;
     }
   }
 
@@ -73,7 +90,7 @@ header {
     @include respond-to(small)
     {
       width: 74.6vw;
-      font-size: 2.38vw;
+      font-size: 3.5vw;
     }
   }
 }
@@ -97,7 +114,7 @@ header {
    @include respond-to(small)
     {
       width: 89.59vw;
-      height: 7.31vw;
+      height: 7.94vw;
     }
   &:focus-within {
     border: 0.069vw solid #3b5cea;
@@ -122,8 +139,8 @@ header {
   @include respond-to(small)
   {
 
-    top:18.22vw;
-     height: 3.4vw;
+    top:21.22vw;
+     height: 4.9vw;
 
   }
 }
@@ -141,8 +158,8 @@ header {
   }
   @include respond-to(small)
   {
-    height: 2.96vw;
-    font-size: 2.368vw;
+    height: 4.2vw;
+    font-size: 4vw;
   }
 }
 
@@ -160,7 +177,7 @@ header {
 
   }
   @include respond-to(large) {
-      top: 24.15vw;
+      top: 27.15vw;
 
   }
 }

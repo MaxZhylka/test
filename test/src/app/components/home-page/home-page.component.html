@@ -1,8 +1,8 @@
-<div class="centerContainer">
+<div class="centerContainer"  (click)="onContainerClick($event)">
 <header>
     <h1>Filter by keywords</h1>
    <div class="field" (mousedown)="onMouseDown($event)" (click)="focusInput($event)" >
-     <img style="padding: 0 1.38vw 0 1.38vw; width: 1.38vw; height: 1.38vw" src="assets/img/search.png">
+     <img src="assets/img/search.png">
       <input #input placeholder="Search..." [formControl]="searchControl" >
    </div>
 </header>
