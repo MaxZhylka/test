@@ -53,7 +53,7 @@ header {
 
   h1 {
     font-size: 1.11vw;
-    width: 11.11vw;
+
     line-height: 1.39vw;
     height: 1.39vw;
     color: #363636;
@@ -62,7 +62,7 @@ header {
 
     @include respond-to(large) {
       font-size: 1.61vw;
-      width: 16.14vw;
+
       line-height: 2.02vw;
       height: 2.02vw;
     }
