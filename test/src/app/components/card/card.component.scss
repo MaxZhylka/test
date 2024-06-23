@@ -1,5 +1,16 @@
-.card
-{
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == small {
+    @media (max-width: 600px) { @content; }
+  } @else if ($breakpoint == medium) {
+    @media (max-width: 768px) { @content; }
+  } @else if ($breakpoint == large) {
+    @media (max-width: 992px) { @content; }
+  } @else if ($breakpoint == xlarge) {
+    @media (max-width: 1200px) { @content; }
+  }
+}
+
+.card {
   width: 27.78vw;
   height: 36.8vw;
   display: flex;
@@ -7,26 +18,71 @@
   position: relative;
   border-radius: 0.34vw;
   border: 0.069vw solid #EAEAEA;
-  box-shadow: 0 0.55vw 1.66vw 0 rgba(0,0,0,0.05);
+  box-shadow: 0 0.55vw 1.66vw 0 rgba(0, 0, 0, 0.05);
   box-sizing: border-box;
+  cursor: pointer;
+  transition: scale 200ms;
 
-  time
-  {
+  &:hover{
+    scale: 1.02;
+  }
+  &:active{
+    scale: 0.97;
+  }
+  @include respond-to(large) {
+    width: 43.05vw;
+    height: 57.04vw;
+    border-radius: 0.527vw;
+    border: 0.10695vw solid #EAEAEA;
+    box-shadow: 0 0.8525vw 2.573vw 0 rgba(0, 0, 0, 0.05);
+  }
+
+  @include respond-to(small) {
+    width: 89.58vw;
+    height: 122.544vw;
+    border-radius: 1.1322vw;
+    border: 0.22977vw solid #EAEAEA;
+    box-shadow: 0 1.8465vw 5.5278vw 0 rgba(0, 0, 0, 0.05);
+  }
+
+  time {
     font-size: 0.97vw;
-    color:rgba(54,54,54,1);
+    color: rgba(54, 54, 54, 1);
+
+    @include respond-to(large) {
+      font-size: 1.5035vw;
+    }
+
+    @include respond-to(small) {
+      font-size: 3.2301vw;
+    }
   }
 }
 
-.main-image
-{
-  width: 27.78vw;
+.main-image {
+  width: 100%;
   height: 15.06vw;
   border-top-left-radius: 0.34vw;
   border-top-right-radius: 0.34vw;
   object-fit: cover;
+  padding: 0;
+  margin: 0;
+
+  @include respond-to(large) {
+    height: 23.343vw;
+    border-top-left-radius: 0.527vw;
+    border-top-right-radius: 0.527vw;
+  }
+
+  @include respond-to(small) {
+    height: 50.0498vw;
+    border-top-left-radius: 1.1322vw;
+    border-top-right-radius: 1.1322vw;
+    box-sizing: border-box;
+  }
 }
-.time
-{
+
+.time {
   opacity: 60%;
   gap: 0.34vw;
   width: 13.88vw;
@@ -37,8 +93,24 @@
   left: 1.73vw;
   position: absolute;
 
+  @include respond-to(large) {
+    gap: 0.527vw;
+    width: 21.514vw;
+    height: 2.139vw;
+    top: 26.04vw;
+    left: 2.6815vw;
+  }
+
+  @include respond-to(small) {
+    gap: 1.1322vw;
+    width: 46.2204vw;
+    height: 4.5954vw;
+    top: 55.944vw;
+    left: 5.7609vw;
+  }
 }
-h2{
+
+h2 {
   position: absolute;
   width: 24.3vw;
   height: 4.02vw;
@@ -48,48 +120,134 @@ h2{
   font-weight: normal;
   font-size: 1.66vw;
   line-height: 2.01vw;
-   color:rgba(54,54,54,1);
+  color: rgba(54, 54, 54, 1);
   overflow: hidden;
+
+  @include respond-to(large) {
+    width: 37.665vw;
+    height: 6.231vw;
+    left: 2.6815vw;
+    top: 30.8815vw;
+    font-size: 2.573vw;
+    line-height: 3.1155vw;
+  }
+
+  @include respond-to(small) {
+    width: 80.019vw;
+    height: 13.3866vw;
+    left: 5.7609vw;
+    top: 66.5109vw;
+    font-size: 5.5278vw;
+    line-height: 6.6933vw;
+  }
 }
 
-.description
-{
+.description {
   position: absolute;
   width: 24.3vw;
   height: 6.66vw;
   padding: 0;
   left: 1.73vw;
-  top:25.34vw;
-   color:rgba(54,54,54,1);
+  top: 25.34vw;
+  color: rgba(54, 54, 54, 1);
   font-size: 1.11vw;
   line-height: 1.66vw;
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
 
+  @include respond-to(large) {
+    width: 37.665vw;
+    height: 10.323vw;
+    left: 2.6815vw;
+    top: 39.277vw;
+    font-size: 1.7205vw;
+    line-height: 2.573vw;
+  }
+
+  @include respond-to(small) {
+    width: 80.019vw;
+    height: 22.1778vw;
+    left: 5.7609vw;
+    top: 84.3822vw;
+    font-size: 3.6963vw;
+    line-height: 5.5278vw;
+  }
 }
-button
-{
+
+button {
   position: absolute;
   display: flex;
   align-items: center;
-  top:33.4vw;
+  top: 33.4vw;
   left: 1.73vw;
   padding: 0;
   background-color: transparent;
   border: none;
   outline: none;
   gap: 0.34vw;
+  cursor: pointer;
+  @include respond-to(large) {
+    top: 51.77vw;
+    left: 2.6815vw;
+    gap: 0.527vw;
+  }
 
+  @include respond-to(small) {
+    top: 111.222vw;
+    left: 5.7609vw;
+    gap: 1.1322vw;
+  }
 
-  p{
+  p {
     font-size: 1.11vw;
     line-height: 1.66vw;
     margin: 0;
     font-weight: bold;
-    color:rgba(54,54,54,1);
+    color: rgba(54, 54, 54, 1);
+
+    @include respond-to(large) {
+      font-size: 1.7205vw;
+      line-height: 2.573vw;
+    }
+
+    @include respond-to(small) {
+      font-size: 3.6963vw;
+      line-height: 5.5278vw;
+    }
   }
 }
+
 .highlight {
   background-color: yellow;
+}
+
+.calendarImg {
+  width: 1.11vw;
+  height: 1.11vw;
+
+  @include respond-to(large) {
+    width: 1.7205vw;
+    height: 1.7205vw;
+  }
+
+  @include respond-to(small) {
+    width: 3.6963vw;
+    height: 3.6963vw;
+  }
+}
+
+.arrow {
+  width: 0.83vw;
+  height: 0.69vw;
+
+  @include respond-to(large) {
+    width: 1.28vw;
+    height: 1.069vw;
+  }
+
+  @include respond-to(small) {
+    width: 2.7639vw;
+    height: 2.2977vw;
+  }
 }
