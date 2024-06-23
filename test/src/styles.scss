@@ -40,3 +40,6 @@ $test-theme: mat.define-light-theme((
 
 html, body { height: 100%;}
 body { margin: 0; font-family: 'Montserrat',sans-serif; }
+.highlight {
+  background-color: yellow;
+}

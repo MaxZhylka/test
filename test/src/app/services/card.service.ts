@@ -1,8 +1,8 @@
 // card.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import {map} from "rxjs/operators";
+import {Observable, of} from 'rxjs';
+import {catchError, map} from "rxjs/operators";
 
 export interface Card
 {
@@ -26,4 +26,8 @@ export class CardService {
   getCards(): Observable<Card[]> {
     return this.http.get<{results:Card[]}>(this.apiUrl).pipe( map(response=>response.results));
   }
+    getCard(id:number): Observable<Card> {
+    return this.http.get<Card>(this.apiUrl+id+'/');
+  }
+
 }
