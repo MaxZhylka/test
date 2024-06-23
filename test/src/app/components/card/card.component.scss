@@ -1,0 +1,95 @@
+.card
+{
+  width: 27.78vw;
+  height: 36.8vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 0.34vw;
+  border: 0.069vw solid #EAEAEA;
+  box-shadow: 0 0.55vw 1.66vw 0 rgba(0,0,0,0.05);
+  box-sizing: border-box;
+
+  time
+  {
+    font-size: 0.97vw;
+    color:rgba(54,54,54,1);
+  }
+}
+
+.main-image
+{
+  width: 27.78vw;
+  height: 15.06vw;
+  border-top-left-radius: 0.34vw;
+  border-top-right-radius: 0.34vw;
+  object-fit: cover;
+}
+.time
+{
+  opacity: 60%;
+  gap: 0.34vw;
+  width: 13.88vw;
+  height: 1.38vw;
+  display: flex;
+  align-items: center;
+  top: 16.8vw;
+  left: 1.73vw;
+  position: absolute;
+
+}
+h2{
+  position: absolute;
+  width: 24.3vw;
+  height: 4.02vw;
+  margin: 0;
+  left: 1.73vw;
+  top: 19.93vw;
+  font-weight: normal;
+  font-size: 1.66vw;
+  line-height: 2.01vw;
+   color:rgba(54,54,54,1);
+  overflow: hidden;
+}
+
+.description
+{
+  position: absolute;
+  width: 24.3vw;
+  height: 6.66vw;
+  padding: 0;
+  left: 1.73vw;
+  top:25.34vw;
+   color:rgba(54,54,54,1);
+  font-size: 1.11vw;
+  line-height: 1.66vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+
+}
+button
+{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  top:33.4vw;
+  left: 1.73vw;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  gap: 0.34vw;
+
+
+  p{
+    font-size: 1.11vw;
+    line-height: 1.66vw;
+    margin: 0;
+    font-weight: bold;
+    color:rgba(54,54,54,1);
+  }
+}
+.highlight {
+  background-color: yellow;
+}

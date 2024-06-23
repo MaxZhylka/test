@@ -1,0 +1,18 @@
+
+<img  *ngIf="(card$ | async)?.image_url" [src]="(card$|async)?.image_url">
+
+<main>
+  <article>
+  <h1>
+  {{(card$|async)?.title}}
+  </h1>
+  <p>
+      {{(card$|async)?.summary}}
+  </p>
+  </article>
+  <button (click)="back()">
+  <img src="assets/img/leftArrow.png">
+  <p>Back to homepage</p>
+</button>
+</main>
+

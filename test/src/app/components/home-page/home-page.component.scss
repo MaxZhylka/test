@@ -1,0 +1,80 @@
+
+header
+{
+  position: absolute;
+  width: 41.66vw;
+  height: 5.55vw;
+  display: flex;
+  flex-direction: column;
+  top:3.47vw;
+  left: 3.125vw;
+  gap: 0.69vw;
+  h1{
+    font-size: 1.11vw;
+    width: 11.11vw;
+    line-height: 1.39vw;
+    height: 1.39vw;
+    color: #363636;
+    font-weight: 600;
+    margin:0;
+  }
+
+  input
+  {
+    font-size: 1.11vw;
+    color:#575757;
+    outline: none;
+    padding: 0;
+    border: none;
+    width: 34.72vw;
+
+  }
+}
+.field
+{
+  width: 41.66vw;
+  height: 3.4vw;
+  display: flex;
+  align-items: center;
+  border-radius: 0.34vw;
+  border: 0.069vw solid #EAEAEA;
+  box-shadow: 0 0.55vw 1.66vw 0 rgba(0,0,0,0.05);
+  box-sizing: border-box;
+
+  transition: transform 200ms;
+  &:focus-within
+    {
+      border: 0.069vw solid #3b5cea;
+    }
+}
+
+.underline
+{
+  display: flex;
+  flex-direction: column;
+  gap:0.34vw;
+  position: absolute;
+  top:11.8vw;
+  left: 3.125vw;
+  width: 89.58vw;
+  height: 1.73vw;
+  border-bottom: 0.069vw solid #EAEAEA;
+}
+.resCount
+{
+  height: 1.38vw;
+  text-align: start;
+  font-size: 1.1vw;
+  color:#363636;
+  margin: 0;
+}
+.cardsBox
+{
+  position: absolute;
+  width: 92.715vw;
+  top:16.66vw;
+  left: 3.125vw;
+  display: flex;
+  flex-wrap: wrap;
+  gap:3.125vw;
+}

@@ -1,0 +1,13 @@
+<header>
+    <h1>Filter by keywords</h1>
+   <div class="field" (mousedown)="onMouseDown($event)" (click)="focusInput($event)">
+     <img style="padding: 0 1.38vw 0 1.38vw; width: 1.38vw; height: 1.38vw" src="assets/img/search.png">
+      <input #input placeholder="Search..." [formControl]="searchControl" >
+   </div>
+</header>
+  <div *ngIf="count!=0" class="underline">
+    <h2 class="resCount">Results: {{ (cards$ | async)?.length}}</h2>
+  </div>
+<section class="cardsBox">
+<card *ngFor="let card of cards$|async" [articleData]="card"></card>
+</section>

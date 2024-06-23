@@ -1,0 +1,14 @@
+
+<article class="card" (click)="openArticle()">
+  <img class="main-image" [src]="articleData.image_url">
+  <span class="time">
+    <img src="assets/img/calendar.png" style="width: 1.11vw;height: 1.11vw">
+    <time>{{convertedTime()}}</time>
+  </span>
+  <h2 [innerHTML]="articleData.title|highlight"></h2>
+  <p class="description" #description [innerHTML]="adjustTextOverflow()|highlight"></p>
+  <button>
+    <p>Read more</p>
+    <img src="assets/img/rightArrow.png" style="width: 0.83vw;height: 0.69vw">
+  </button>
+</article>
